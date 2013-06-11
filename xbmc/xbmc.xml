@@ -1,111 +1,165 @@
-﻿<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleXBMC" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleXBMC" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
 
-  <rule id="ruleXBMC" scope="public">
-    <tag>out.action=new Object(); </tag>
-	<item >jarvis</item>
-    <one-of>
-      <item><ruleref uri="#ruleXBMC_playlist"/><tag>out.action = rules.ruleXBMC_playlist;</tag></item>
-      <item><ruleref uri="#ruleXBMC_search"/><tag>out.action = rules.ruleXBMC_search;</tag></item>
-      <item><ruleref uri="#ruleXBMC_Artist"/><tag>out.action = rules.ruleXBMC_Artist;</tag></item>
-	  <item>musique suivante<tag>out.action.action="next"</tag></item>
-      <item>musique précédente<tag>out.action.action="prev"</tag></item>
-      <item>met en pause la musique<tag>out.action.action="play"</tag></item>
-      <item>reprends la musique<tag>out.action.action="play"</tag></item>
-	  <item>met le volume à dix pourcent<tag>out.action.action="volume";out.action.volume_num="10";</tag></item>
-	  <item>met le volume à vingt pourcent<tag>out.action.action="volume";out.action.volume_num="20";</tag></item>
-	  <item>met le volume à trente pourcent<tag>out.action.action="volume";out.action.volume_num="30";</tag></item>
-	  <item>met le volume à quarante pourcent<tag>out.action.action="volume";out.action.volume_num="40";</tag></item>
-	  <item>met le volume à cinquante pourcent<tag>out.action.action="volume";out.action.volume_num="50";</tag></item>
-	  <item>met le volume à soixante pourcent<tag>out.action.action="volume";out.action.volume_num="60";</tag></item>
-	  <item>met le volume à septante pourcent<tag>out.action.action="volume";out.action.volume_num="70";</tag></item>
-	  <item>met le volume à quatre-vingt pourcent<tag>out.action.action="volume";out.action.volume_num="80";</tag></item>
-	  <item>met le volume à nonante pourcent<tag>out.action.action="volume";out.action.volume_num="90";</tag></item>
-	  <item>met le volume à cent pourcent<tag>out.action.action="volume";out.action.volume_num="100";</tag></item>
-	  <item>coupe le son<tag>out.action.action="volume";out.action.volume_num="0";</tag></item>
-	  <item>en haut<tag>out.action.action="fleche_up";</tag></item>
-	  <item>en bas<tag>out.action.action="fleche_down";</tag></item>
-	  <item>à droite<tag>out.action.action="fleche_right";</tag></item>
-	  <item>à gauche<tag>out.action.action="fleche_left";</tag></item>
-	  <item>selectionne<tag>out.action.action="bouton_select";</tag></item>
-	  <item>retour<tag>out.action.action="retour_arriere";</tag></item>
-	  <item>acceuil<tag>out.action.action="retour_arriere";</tag></item>
-	  <item>redémarre lecture<tag>out.action.action="lecture_normale";</tag></item>
-	  <item>pause lecture<tag>out.action.action="pause_lecture";</tag></item>
-	  <item>stop lecture<tag>out.action.action="stop_lecture";</tag></item>
-	  <item>démarre lecture<tag>out.action.action="demare_lecture";</tag></item>
-	  
-	  <item>lecture normale<tag>out.action.action="lecture_normale";</tag></item>
-	  <item>lecture fois deux<tag>out.action.action="lecture_2";</tag></item>
-	  <item>lecture fois quatre<tag>out.action.action="lecture_4";</tag></item>
-	  <item>lecture fois huit<tag>out.action.action="lecture_8";</tag></item>
-	  <item>lecture fois seize<tag>out.action.action="lecture_16";</tag></item>
-	  <item>lecture fois trente deux<tag>out.action.action="lecture_32";</tag></item>
-	  
-	  <item>met la télévision<tag>out.action.action="tvlive";</tag></item>
-	  
-	  <item>met la chaine TF1<tag>out.action.action="tf1";</tag></item>
-	  <item>met la chaine TF1 HD<tag>out.action.action="tf1_hd";</tag></item>
-	  <item>met la chaine France 2<tag>out.action.action="fr2";</tag></item>
-	  <item>met la chaine France 2 HD<tag>out.action.action="fr2_hd";</tag></item>
-	  <item>met la chaine France 3<tag>out.action.action="fr3";</tag></item>
-	  <item>met la chaine RTL-TVI<tag>out.action.action="rtl_tvi";</tag></item>
-	  <item>met la chaine La Une<tag>out.action.action="la_une";</tag></item>
-	  <item>met la chaine La Deux<tag>out.action.action="la_deux";</tag></item>
-	  <item>met la chaine La Trois<tag>out.action.action="la_trois";</tag></item>
-	  <item>met la chaine Club RTL<tag>out.action.action="club_rtl";</tag></item>
-	  <item>met la chaine Plug TV<tag>out.action.action="plug_tv";</tag></item>
-	  <item>met la chaine SYFY<tag>out.action.action="syfy";</tag></item>
-	  <item>met la chaine SYFY HD<tag>out.action.action="syfy_hd";</tag></item>
-	  <item>met la chaine TF6<tag>out.action.action="tf6";</tag></item>
-	  <item>met la chaine TF6 HD<tag>out.action.action="tf6_hd";</tag></item>
-	  
-	  
-	  <item>met la chaine Maison Plus<tag>out.action.action="maison_plus";</tag></item>
-	  <item>met la chaine bein sport 1<tag>out.action.action="bein_sport_1";</tag></item>
-	  <item>met la chaine bein sport 1 HD<tag>out.action.action="bein_sport_1_hd";</tag></item>
-	  <item>met la chaine bein sport 2<tag>out.action.action="bein_sport_2";</tag></item>
-	  <item>met la chaine bein sport 2 HD<tag>out.action.action="bein_sport_2_hd";</tag></item>
-	  
-	  <!-- Camera ip -->
-	  <item>montre la caméra du salon<tag>out.action.action="cam_salon";</tag></item>
-	  
-	</one-of>
-    <tag>out.action._attributes.tts = "Je m'en occupe"</tag>
-    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/xbmc";</tag>
-  </rule>  
+	<rule id="ruleXBMC" scope="public">
+		<tag>out.action=new Object(); </tag>
+		<item >Jarvis</item>
+		<one-of>
+			<item><ruleref uri="#ruleXBMC_playlist"/><tag>out.action = rules.ruleXBMC_playlist;</tag></item>
+			<item><ruleref uri="#ruleXBMC_search"/><tag>out.action = rules.ruleXBMC_search;</tag></item>
+			<item><ruleref uri="#ruleXBMC_Artist"/><tag>out.action = rules.ruleXBMC_Artist;</tag></item>
+			<item><ruleref uri="#ruleXBMC_Telecommande"/><tag>out.action = rules.ruleXBMC_Telecommande</tag></item>
+			<item><ruleref uri="#ruleXBMC_Serie"/><tag>out.action = rules.ruleXBMC_Serie;</tag></item>
+			<item>met le volume à dix pourcent<tag>out.action.action="volume";out.action.volume_num="10";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à vingt pourcent<tag>out.action.action="volume";out.action.volume_num="20";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à trente pourcent<tag>out.action.action="volume";out.action.volume_num="30";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à quarante pourcent<tag>out.action.action="volume";out.action.volume_num="40";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à cinquante pourcent<tag>out.action.action="volume";out.action.volume_num="50";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à soixante pourcent<tag>out.action.action="volume";out.action.volume_num="60";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à septante pourcent<tag>out.action.action="volume";out.action.volume_num="70";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à quatre-vingt pourcent<tag>out.action.action="volume";out.action.volume_num="80";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à nonante pourcent<tag>out.action.action="volume";out.action.volume_num="90";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met le volume à cent pourcent<tag>out.action.action="volume";out.action.volume_num="100";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>coupe le son<tag>out.action.action="volume";out.action.volume_num="0";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>en haut<tag>out.action.action="fleche_up";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>en bas<tag>out.action.action="fleche_down";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>à droite<tag>out.action.action="fleche_right";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>à gauche<tag>out.action.action="fleche_left";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>selectionne<tag>out.action.action="bouton_select";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>retour<tag>out.action.action="retour_arriere";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>acceuil<tag>out.action.action="retour_arriere";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>redémarre lecture<tag>out.action.action="lecture_normale";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>pause lecture<tag>out.action.action="pause_lecture";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>stop lecture<tag>out.action.action="stop_lecture";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>démarre lecture<tag>out.action.action="demare_lecture";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  
+		  <item>lecture normale<tag>out.action.action="lecture_normale";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>lecture fois deux<tag>out.action.action="lecture_2";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>lecture fois quatre<tag>out.action.action="lecture_4";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>lecture fois huit<tag>out.action.action="lecture_8";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>lecture fois seize<tag>out.action.action="lecture_16";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>lecture fois trente deux<tag>out.action.action="lecture_32";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  
+		  <item>met la télévision<tag>out.action.action="tvlive";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  
+		  <item>met la chaine TF1<tag>out.action.action="tf1";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine TF1 HD<tag>out.action.action="tf1_hd";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine France 2<tag>out.action.action="fr2";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine France 2 HD<tag>out.action.action="fr2_hd";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine France 3<tag>out.action.action="fr3";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine RTL-TVI<tag>out.action.action="rtl_tvi";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine La Une<tag>out.action.action="la_une";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine La Deux<tag>out.action.action="la_deux";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine La Trois<tag>out.action.action="la_trois";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine Club RTL<tag>out.action.action="club_rtl";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine Plug TV<tag>out.action.action="plug_tv";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine SYFY<tag>out.action.action="syfy";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine SYFY HD<tag>out.action.action="syfy_hd";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine TF6<tag>out.action.action="tf6";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine TF6 HD<tag>out.action.action="tf6_hd";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  
+		  
+		  <item>met la chaine Maison Plus<tag>out.action.action="maison_plus";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine bein sport 1<tag>out.action.action="bein_sport_1";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine bein sport 1 HD<tag>out.action.action="bein_sport_1_hd";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine bein sport 2<tag>out.action.action="bein_sport_2";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  <item>met la chaine bein sport 2 HD<tag>out.action.action="bein_sport_2_hd";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  
+		  <!-- Camera ip  -->
+		  <item>montre la caméra du salon<tag>out.action.action="cam_salon";</tag><tag>out.action.xbmc="tv" </tag></item>
+		  
+		  <!-- Mise à jour xml   -->
+		  <item>mise à jour des séries<tag>out.action.action="xml_serie";</tag><tag>out.action.xbmc="video" </tag></item>
+		  <item>mise à jour des genres<tag>out.action.action="xml_genre";</tag><tag>out.action.xbmc="music" </tag></item>
+  	      <item>mise à jour des artistes<tag>out.action.action="xml_artist";</tag><tag>out.action.xbmc="music" </tag></item>
+		 
+		</one-of>
+		<tag>out.action._attributes.tts = "Je m'en occupe"</tag>
+		<tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/xbmc";</tag>
+	</rule>  
   
-  
-  <rule id="ruleXBMC_playlist" scope="public">
-    <example>jarvis joue de la musique Rock</example>
-    <tag>out.action=new Object(); </tag>
-    
-    <item>joue de la musique <tag>out.action.action="playlist"; </tag></item>
-    <one-of>
-<!-- Automatic Generation Genre ¤ -->
-<item> <tag>out.action._attributes.tts = "Le fichier XML n'a jamais été généré!"</tag></item>
-<!-- ¤ Automatic Generation Genre -->
-	  </one-of>
-  </rule>
+	<rule id="ruleXBMC_Telecommande" scope="public">
+		<example>SARAH musique suivante</example>
+		<tag>out.action=new Object(); </tag>
+		<one-of>
+			<item>musique suivante<tag>out.action.action="next"</tag><tag>out.action.xbmc="music" </tag></item>
+			<item>musique précédente<tag>out.action.action="prev"</tag><tag>out.action.xbmc="music" </tag></item>
+			<item>met en pause la musique<tag>out.action.action="play"</tag><tag>out.action.xbmc="music" </tag></item>
+			<item>musique en pause<tag>out.action.action="play"</tag><tag>out.action.xbmc="music" </tag></item>
+			<item>reprends la musique<tag>out.action.action="play"</tag><tag>out.action.xbmc="music" </tag></item>
+			<item>met en pause la série<tag>out.action.action="playvideo"</tag><tag>out.action.xbmc="video" </tag></item>
+			<item>remet la série<tag>out.action.action="playvideo"</tag><tag>out.action.xbmc="video" </tag></item>
+		</one-of>
+	</rule>  
 
-  <rule id="ruleXBMC_search" scope="public">
-    <example>jarvis recherche * dans les musiques</example>
-    <tag>out.action=new Object();</tag>
-    <tag>out.action.action="playlist";</tag>
-    <item>recherche</item><ruleref special="GARBAGE" /><item>dans les  musiques</item>
-    <tag>out._attributes.dictation="true";</tag> 
-  </rule>
+	<rule id="ruleXBMC_playlist" scope="public">
+		<example>SARAH joue de la musique Rock</example>
+		<tag>out.action=new Object(); </tag>
+		<tag>out.action.xbmc="music" </tag>
+		<one-of>
+			<item>met de la musique <tag>out.action.action="playlist"; </tag></item>
+			<item>joue de la musique <tag>out.action.action="playlist"; </tag></item>
+		</one-of>
+		<one-of>
+			<!-- Personalisation Genre  -->
+			<!-- Automatic Generation Genre ¤ -->
+            <item>Karaoke<tag>out.action.genre = "Karaoke"</tag></item>
+            <item>RandB<tag>out.action.genre = "R&amp;B"</tag></item>
+            <item>Hip-Hop<tag>out.action.genre = "Hip-Hop"</tag></item>
+            <item>Other<tag>out.action.genre = "Other"</tag></item>
+            <item>Classical<tag>out.action.genre = "Classical"</tag></item>
+            <item>Trip Hop<tag>out.action.genre = "Trip Hop"</tag></item>
+            <item>Blues<tag>out.action.genre = "Blues"</tag></item>
+            <item>Francais<tag>out.action.genre = "Francais"</tag></item>
+            <item>Pop<tag>out.action.genre = "Pop"</tag></item>
+            <item>Variété française<tag>out.action.genre = "Variété française"</tag></item>
+            <!-- ¤ Automatic Generation Genre -->
+		</one-of>
+	</rule>
 
-  <rule id="ruleXBMC_Artist" scope="public">
-    <example>jarvis je veux écouter ACDC</example>
-    <tag>out.action=new Object();</tag>
-    <tag>out.action.action="artist";</tag>
-    <item>je veux écouter</item>
-	<one-of>
-<!-- Automatic Generation Artist § -->
-<item> <tag>out.action._attributes.tts = "Le fichier XML n'a jamais été généré!"</tag></item>
-<!-- § Automatic Generation Artist -->
-	</one-of>
-  </rule>
+	<rule id="ruleXBMC_Artist" scope="public">
+		<example>SARAH je veux écouter ACDC</example>
+		<tag>out.action=new Object();</tag>
+		<tag>out.action.xbmc="music" </tag>
+		<item>je veux écouter<tag>out.action.action="artist";</tag></item>
+		<one-of>
+			<!-- Personalisation Artiste  -->
+			<!-- Automatic Generation Artist § -->
+            <item>Flo Rida<tag>out.action.artist = "Flo Rida"</tag></item>
+            <item>Fugees<tag>out.action.artist = "Fugees"</tag></item>
+            <item>Gérald De Palmas<tag>out.action.artist = "Gérald De Palmas"</tag></item>
+            <item>De Palmas<tag>out.action.artist = "De Palmas"</tag></item>
+            <item>Gwen Stefani<tag>out.action.artist = "Gwen Stefani"</tag></item>
+            <item>Jack Holiday and Mike Candys<tag>out.action.artist = "Jack Holiday &amp; Mike Candys"</tag></item>
+            <item>Jenifer<tag>out.action.artist = "Jenifer"</tag></item>
+            <item>jimi hendrix<tag>out.action.artist = "jimi hendrix"</tag></item>
+            <!-- § Automatic Generation Artist -->
+		</one-of>
+	</rule>
   
+	<rule id="ruleXBMC_search" scope="public">
+		<example>SARAH recherche * dans les musiques</example>
+		<tag>out.action=new Object();</tag>
+		<tag>out.action.xbmc="music" </tag>
+		<tag>out.action.action="playlist";</tag>
+		<item>recherche</item><ruleref special="GARBAGE" /><item>dans les  musiques</item>
+		<tag>out._attributes.dictation="true";</tag> 
+	</rule>
+
+	<rule id="ruleXBMC_Serie" scope="public">
+		<example>SARAH met le prochain épisode des simpsons</example>
+		<tag>out.action=new Object();</tag>
+		<tag>out.action.xbmc="video" </tag>
+		<item>met le prochain épisode de<tag>out.action.action="tvshowtitle";</tag></item>
+		<one-of>
+			<!-- Personalisation Série  -->
+			<!-- Automatic Generation Serie £ -->
+            <item>Defiance<tag>out.action.showid = "3"</tag></item>
+            <item>Grimm<tag>out.action.showid = "2"</tag></item>
+            <item>Haven<tag>out.action.showid = "4"</tag></item>
+            <item>Lost Girl<tag>out.action.showid = "1"</tag></item>
+            <!-- £ Automatic Generation Serie -->
+		</one-of>
+	</rule>
+	
 </grammar>
  
