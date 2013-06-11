@@ -1,0 +1,26 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleMeteo" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleMeteo" scope="public">
+    <example>jarvis occupe toi des enfants ?</example>
+    <tag>out.action=new Object(); </tag>
+    
+    <item>jarvis</item>
+    
+    <one-of>
+	  <item>occupe toi des enfants<tag>out.action.action="histoire_mp3";</tag></item>
+      <item>amuse les petis<tag>out.action.action="histoire_mp3";</tag></item>
+      <item>fait la babysitter<tag>out.action.action="histoire_mp3";</tag></item>
+    </one-of>
+<!--
+    <item repeat="0-1">
+      <one-of>
+        <item>aujourd'hui<tag>out.action.date="1";</tag></item>
+        <item>en ce moment<tag>out.action.date="1";</tag></item>
+        <item>ce soir<tag>out.action.date="1";</tag></item>
+        <item>demain<tag>out.action.date="3";</tag></item>
+        <item>après demain<tag>out.action.date="4";</tag></item>
+      </one-of>
+    </item>
+  -->
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/babysitter";</tag>
+  </rule> 
+</grammar>
