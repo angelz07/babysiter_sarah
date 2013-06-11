@@ -1,0 +1,11 @@
+{
+  "modules" : { 
+    "linknx":     {
+      "description": "Pilote la box Linknx",
+      "version"    : "0.1",
+      "answers"    : "Je m'en occupe !|Voilà qui est fait !|C'est fait !|Voilà !|Tout de suite !",
+      "ip_linknx"    : "192.168.1.25",
+	  "port_linknx"    : "1028"
+    }
+  }
+}

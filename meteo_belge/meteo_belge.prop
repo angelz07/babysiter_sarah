@@ -1,0 +1,9 @@
+{
+  "modules" : { 
+    "meteo_belge"  : {
+      "description": "Recherche la météo en ligne",
+      "version": "1.0",
+      "url": "http://www.rtbf.be/services/meteo/belgique-ville_cuesmes?id=1882"      
+    }
+  }
+}

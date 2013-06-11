@@ -1,0 +1,8 @@
+{
+  "modules" : { 
+    "histoire_live"  : {
+      "description": "Histoire Live",
+      "version": "1.0"
+    }
+  }
+}

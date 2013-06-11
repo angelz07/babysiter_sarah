@@ -1,0 +1,27 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleMeteo" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleMeteo" scope="public">
+    <example>jarvis quelle est la météo pour demain ?</example>
+    <tag>out.action=new Object(); </tag>
+    
+    <item>jarvis</item>
+    
+    <one-of>
+      <item>quelle est la météo</item>
+      <item>quelle est le temps</item>
+      <item>est-ce qu'il pleut</item>
+      <item>comment dois-je m'habiller</item>
+    </one-of>
+
+    <item repeat="0-1">
+      <one-of>
+        <item>aujourd'hui<tag>out.action.date="today";</tag></item>
+        <item>en ce moment<tag>out.action.date="today";</tag></item>
+        <item>ce soir<tag>out.action.date="today";</tag></item>
+        <item>demain<tag>out.action.date="tomorow";</tag></item>
+       <!-- <item>après demain<tag>out.action.date="4";</tag></item> -->
+      </one-of>
+    </item>
+  
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/meteo_belge";</tag>
+  </rule> 
+</grammar>
